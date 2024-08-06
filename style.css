@@ -1,0 +1,140 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 400px;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+form {
+    margin-top: 20px;
+}
+
+input[type="text"] {
+    width: calc(100% - 80px);
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+}
+
+button {
+    padding: 10px;
+    background: #5cb85c;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #4cae4c;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+li {
+    background: #eee;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+li.completed {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+li button {
+    background: #d9534f;
+    border: none;
+    padding: 5px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-left: 5px;
+}
+
+li button:hover {
+    background: #c9302c;
+}
+
+/* New styles for the edit button */
+li .edit {
+    background: #5bc0de;
+}
+
+li .edit:hover {
+    background: #31b0d5;
+}
+
+li .save {
+    background: #5cb85c;
+}
+
+li .save:hover {
+    background: #4cae4c;
+}
+
+li input[type="text"] {
+    flex: 1;
+    padding: 5px;
+    margin-right: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    display: none; /* Hidden by default */
+}
+
+.new-task {
+    transform: scale(0.9);
+    opacity: 0;
+}
+
+.new-task {
+    animation: growIn 0.3s forwards;
+}
+
+@keyframes growIn {
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.removed-task {
+    animation: shrinkOut 0.3s forwards;
+}
+
+@keyframes shrinkOut {
+    to {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+}
